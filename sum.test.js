@@ -1,7 +1,7 @@
 
 
 
-const {myFunction,sum,fetchData}=require("./sum")
+const {myFunction,sum,fetchData,fetchPromise}=require("./sum")
 
 
 test('adds 1+2 to equal 3',()=>{
@@ -61,6 +61,23 @@ test('the data is pure',done=>{
 
 
 
+
+
+test('TOPGUN',()=>{
+    return expect(fetchPromise()).resolves.toBe('topgun')
+})
+
+
+
+test("failure", () => {
+  return expect(fetchPromise()).rejects.toThrow();
+})
+
+
+test("topgun async",async()=>{
+    const data=await fetchPromise();
+    expect(data).toBe('topgun')
+})
 
 
 
