@@ -23,9 +23,21 @@ const fetchData=(callback)=>{
     },1000)
 }
 
+const fetchPromise = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("topgun",1000);
+    });
+  });
+};
+
 
 module.exports = {
   sum: sum,
   myFunction: myFunction,
   fetchData: fetchData,
+  fetchPromise: fetchPromise
 };
+
+
+
